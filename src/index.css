@@ -102,7 +102,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 1rem 1.5rem;
+    padding: .5rem 1.5rem;
     gap: .5rem;
 }
 
@@ -199,4 +199,20 @@
     color: var(--Dark-gray-blue);
     font-weight: var(--font-wght-XL);
     opacity: var(--summary-total-opacity);
+}
+
+/* *Mobile device media queries */
+@media screen and (min-height: 668px) and (max-width: 576px) {
+    .breakdown--summary {
+        min-height: 60dvh;
+        justify-content: space-evenly;
+    }
+
+    .breakdown--summary> :not(.summary.action, .breakdown--title) {
+        padding: 1.1rem;
+    }
+
+    .summary.action>#continue {
+        padding: 1.25rem;
+    }
 }
