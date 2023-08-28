@@ -4,7 +4,7 @@ import YourScore from "./components/YourScore";
 import BreakDownSummary from "./components/BreakDownSummary";
 
 const App = () => {
-    const [hasWrapper, setHasWrapper] = useState(false);
+    const [hasWrapper, setHasWrapper] = useState(true);
     const [yourStats, setYourStats] = useState([]);
 
     useEffect(() => {
