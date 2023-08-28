@@ -4,7 +4,21 @@ import YourScore from "./components/YourScore";
 import BreakDownSummary from "./components/BreakDownSummary";
 
 const App = () => {
+    const [hasWrapper, setHasWrapper] = useState(false);
     const [yourStats, setYourStats] = useState([]);
+
+    useEffect(() => {
+        const handleResize = (e) => {
+            if (e.target.innerWidth >= 576) setHasWrapper(true);
+            if (e.target.innerWidth < 576) setHasWrapper(false);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,10 +46,20 @@ const App = () => {
     if (yourStats.length === 0) return;
 
     return (
-        <main className="container">
-            <YourScore />
-            <BreakDownSummary yourStats={yourStats} />
-        </main>
+        <div className="container">
+            {hasWrapper && (
+                <div className="card--wrapper">
+                    <YourScore />
+                    <BreakDownSummary yourStats={yourStats} />
+                </div>
+            )}
+            {!hasWrapper && (
+                <>
+                    <YourScore />
+                    <BreakDownSummary yourStats={yourStats} />
+                </>
+            )}
+        </div>
     );
 };
 
