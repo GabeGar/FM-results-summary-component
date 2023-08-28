@@ -12,6 +12,7 @@ const App = () => {
             try {
                 const res = await fetch("/data.json");
 
+                // * Can throw error here to later handle said error (if one ever occurred during the fetching process)
                 if (!res.ok) fetchData();
 
                 const data = await res.json();
