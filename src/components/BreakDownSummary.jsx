@@ -7,6 +7,7 @@ const BreakDownSummary = ({ yourStats }) => {
                 <h2>Summary</h2>
             </section>
             {yourStats.map((statsObj) => {
+                console.log(statsObj);
                 return (
                     <SummarySection
                         key={statsObj.category}

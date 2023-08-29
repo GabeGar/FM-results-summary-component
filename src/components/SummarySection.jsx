@@ -13,7 +13,7 @@ const SummarySection = ({ category, score }) => {
                 {category === "Memory" && <Memory />}
                 {category === "Verbal" && <Verbal />}
                 {category === "Visual" && <Visual />}
-                <h3>Reaction</h3>
+                <h3>{category}</h3>
             </div>
             <div className="right--side">
                 <span className="individual--score">{score}</span>
