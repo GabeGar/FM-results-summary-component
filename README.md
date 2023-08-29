@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Github](https://github.com/GabeGar/FM-results-summary-component)
--   Live Site URL: [GH-Pages](https://your-live-site-url.com)
+-   Live Site URL: [GH-Pages](https://gabegar.github.io/FM-results-summary-component/)
 
 ## My process
 
