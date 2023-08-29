@@ -47,7 +47,7 @@ Users should be able to:
 
 -   Utilizing dynamic fonts and importing fonts via @font-face syntax, in css.
 
--   Imported the json file, dynamically use the data, from the provided data.json file.
+-   Imported the json file, to dynamically use the data, in the app.
 
 ## Author
 
