@@ -2,7 +2,7 @@ import SummarySection from "./SummarySection";
 
 const BreakDownSummary = ({ yourStats }) => {
     return (
-        <main className="breakdown--summary">
+        <section className="breakdown--summary">
             <section className="breakdown--title">
                 <h2>Summary</h2>
             </section>
@@ -18,7 +18,7 @@ const BreakDownSummary = ({ yourStats }) => {
             <section className="summary action">
                 <button id="continue">Continue</button>
             </section>
-        </main>
+        </section>
     );
 };
 
