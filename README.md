@@ -47,40 +47,12 @@ Users should be able to:
 
 -   Utilizing dynamic fonts and importing fonts via @font-face syntax, in css.
 
--   Utilized the built-in fetch api in javascript, via react, to get the data dynamically, from the provided data.json file.
-    It had to be placed in the public folder, to be served to anyone accessing the page. Happens after mounting the app component.
-
-```js - react
-// * In app component
-useEffect(() => {
-    const fetchData = async () => {
-        // * Loading state would default to true here.
-        try {
-            const res = await fetch("/data.json");
-
-            // * Can throw error here to later handle said error (if one ever occurred during the fetching process)
-            if (!res.ok) fetchData();
-
-            const data = await res.json();
-            setYourStats(data);
-        } catch (err) {
-            // * Error handling here and/or trigger some sort of error state.
-            console.log(err);
-        } finally {
-            // * End of loading state.
-        }
-    };
-
-    fetchData();
-}, []);
-
-// * Conditional in app to prevent error, since data doesn't exist without fetching (which happens after app has mounted, in useEffect).
-if (yourStats.length === 0) return;
-```
-
--   While I could've/should've properly handled states for loading and error, respectively, I kept it simple,
-    to allow myself to focus on the more heavily involved css.
+-   Imported the json file, dynamically use the data, from the provided data.json file.
 
 ## Author
 
 -   Frontend Mentor - [@GabeGar](https://www.frontendmentor.io/profile/GabeGar)
+
+```
+
+```

@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import YourScore from "./components/YourScore";
 import BreakDownSummary from "./components/BreakDownSummary";
 
+import data from "./json/data.json";
+
 const App = () => {
     const [hasWrapper, setHasWrapper] = useState(true);
-    const [yourStats, setYourStats] = useState([]);
+    const [yourStats] = useState(data);
 
     useEffect(() => {
         const handleResize = (e) => {
@@ -19,31 +21,6 @@ const App = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            // * Loading state would default to true here.
-            try {
-                const res = await fetch("/data.json");
-
-                // * Can throw error here to later handle said error (if one ever occurred during the fetching process)
-                if (!res.ok) fetchData();
-
-                const data = await res.json();
-                setYourStats(data);
-            } catch (err) {
-                // * Error handling here and/or trigger some sort of error state.
-                console.log(err);
-            } finally {
-                // * End of loading state.
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    // * Can introduce a page loader here -- excluded since its not part of the challenge.
-    if (yourStats.length === 0) return;
 
     return (
         <div className="container">
